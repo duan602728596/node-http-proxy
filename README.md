@@ -4,9 +4,25 @@
 
 # node-http-proxy [![Build Status](https://travis-ci.org/http-party/node-http-proxy.svg?branch=master)](https://travis-ci.org/http-party/node-http-proxy) [![codecov](https://codecov.io/gh/http-party/node-http-proxy/branch/master/graph/badge.svg)](https://codecov.io/gh/http-party/node-http-proxy)
 
+> forked from [node-http-proxy](https://github.com/http-party/node-http-proxy), solve the headers error when the service is http2.
+
 `node-http-proxy` is an HTTP programmable proxying library that supports
 websockets. It is suitable for implementing components such as reverse
 proxies and load balancers.
+
+### Http2
+
+When you use http2, header starting with `:` in the request header will be deleted.   
+
+When you rely on `node-http-proxy`, you can download `module-alias` and configure it like this:
+
+```javascript
+const moduleAlias = require('module-alias');
+
+moduleAlias.addAliases({
+  'http-proxy': '@bbkkbkk/http-proxy'
+});
+```
 
 ### Table of Contents
   * [Installation](#installation)
