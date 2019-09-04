@@ -7,3 +7,6 @@ coverage
 .travis.yml
 CHANGELOG.md
 UPGRADING.md
+.idea
+yarn.lock
+package-lock.json
